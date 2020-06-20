@@ -1,32 +1,29 @@
 /*Details regarding each Product in a store*/
 CREATE TABLE IF NOT EXISTS Product (
     Product_ID BIGINT AUTO_INCREMENT UNIQUE,
-    Brand CHAR,
-    Product_Name CHAR,
-    Category CHAR,
-    Subcategory CHAR, 
-    BBD DATE,
+    Brand VARCHAR(64),
+    Product_Name VARCHAR(155),
+    Category VARCHAR(40),
+    Subcategory VARCHAR(40), 
     PRIMARY KEY(Product_ID)
 );
 
 /*Store Addresses for x company*/
 CREATE TABLE IF NOT EXISTS Addresses (
-    AD1 CHAR,
-    AD2 CHAR,
-    City_Town CHAR, 
-    District CHAR,
-    Country CHAR, 
-    Telephone_No VARCHAR(11),  
+    AD1 VARCHAR(50),
+    AD2 VARCHAR(50),
+    City_Town VARCHAR(20), 
+    District VARCHAR(15),
+    Country VARCHAR(30), 
+    Telephone_No VARCHAR(11) UNIQUE,  
     PRIMARY KEY(AD1)
 );
 
 /*Details about a store*/
 CREATE TABLE IF NOT EXISTS Store (
     Store_ID BIGINT AUTO_INCREMENT UNIQUE,
-    City CHAR, 
-    District CHAR,
-    Store_Name CHAR,
-    Address CHAR, 
+    Store_Name VARCHAR(30),
+    Address VARCHAR(50), 
     PRIMARY KEY(Store_ID),
     FOREIGN KEY (Address) REFERENCES Addresses(AD1)
 );
@@ -47,8 +44,8 @@ CREATE TABLE IF NOT EXISTS Stock (
 CREATE TABLE IF NOT EXISTS Staff (
     Staff_ID BIGINT AUTO_INCREMENT UNIQUE,
     Store_ID BIGINT UNIQUE,
-    F_name CHAR,
-    S_name CHAR, 
+    F_name VARCHAR(50),
+    S_name VARCHAR(50), 
     DOB DATE,
     Clock_Num BIGINT UNIQUE,
     User_Num BIGINT UNIQUE,
@@ -71,9 +68,9 @@ CREATE TABLE IF NOT EXISTS Contract (
 /*Contractors (eg: Cleaner, Maintenance)*/
 CREATE TABLE IF NOT EXISTS Contractor (
     Contractor_ID BIGINT AUTO_INCREMENT UNIQUE,
-    Company CHAR,
+    Company VARCHAR(50),
     Store_ID BIGINT,
-    Job CHAR,
+    Job VARCHAR(50),
     Job_Start DATE,
     Job_End DATE,
     PRIMARY KEY(Contractor_ID),
