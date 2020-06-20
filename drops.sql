@@ -1,0 +1,7 @@
+DROP TABLE Contractor;
+DROP TABLE Contract;
+DROP TABLE Staff;
+DROP TABLE Stock;
+DROP TABLE Store;
+DROP TABLE Addresses;
+DROP TABLE Product;
