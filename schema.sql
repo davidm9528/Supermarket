@@ -1,28 +1,49 @@
+--Details regarding each Product in a store
+CREATE TABLE IF NOT EXISTS Product (
+    Product_ID BIGINT AUTO_INCREMENT UNIQUE,
+    Brand CHAR,
+    Product_Name CHAR,
+    Category CHAR,
+    Subcategory CHAR, 
+    BBD DATE,
+    PRIMARY KEY(Product_ID)
+);
+
+--Store Addresses for x company
+CREATE TABLE IF NOT EXISTS Addresses (
+    AD1 CHAR,
+    AD2 CHAR,
+    City_Town CHAR, 
+    District CHAR,
+    Country CHAR, 
+    Telephone_No VARCHAR(11),  
+    PRIMARY KEY(AD1)
+);
+
+--Details about a store
 CREATE TABLE IF NOT EXISTS Store (
     Store_ID BIGINT AUTO_INCREMENT UNIQUE,
-    Stock_ID BIGINT AUTO_INCREMENT UNIQUE,
-    County CHAR, 
-    PRIMARY KEY(Store_ID)
-    FOREIGN KEY (Stock_ID) REFERENCES Stock(Stock_ID)
+    City CHAR, 
+    District CHAR,
+    Store_Name CHAR,
+    Address CHAR, 
+    PRIMARY KEY(Store_ID),
+    FOREIGN KEY (Address) REFERENCES Addresses(AD1)
 );
 
-CREATE TABLE IF NOT EXISTS Item (
-    Item_ID BIGINT AUTO_INCREMENT UNIQUE,
-    Provider CHAR,
-    Name CHAR,
-    BBD DATE,
-    PRIMARY KEY(Item_ID)
-);
-
+--Details holding all the details about items in a Store's Stock
 CREATE TABLE IF NOT EXISTS Stock (
-    Stock_ID BIGINT AUTO_INCREMENT UNIQUE,
-    Item_ID BIGINT,
-    Remaining BIGINT,
+    Product_ID BIGINT,
+    Store_ID BIGINT,
+    Promotion BIT, 
+    Quantity BIGINT,
+    Value INT, 
     Next_Delivery DATE,
-    PRIMARY KEY(Stock_ID),   
-    FOREIGN KEY(Item_ID) REFERENCES Item(Item_ID)
+    FOREIGN KEY(Product_ID) REFERENCES Product(Product_ID),
+    FOREIGN KEY(Store_ID) REFERENCES Store(Store_ID)  
 );
 
+--Details about the staff in different Stores
 CREATE TABLE IF NOT EXISTS Staff (
     Staff_ID BIGINT AUTO_INCREMENT UNIQUE,
     Store_ID BIGINT UNIQUE,
@@ -36,6 +57,7 @@ CREATE TABLE IF NOT EXISTS Staff (
     FOREIGN KEY(Store_ID) REFERENCES Store(Store_ID)
 );
 
+--The Contracts for each member of Staff
 CREATE TABLE IF NOT EXISTS Contract (
     Contract_ID BIGINT AUTO_INCREMENT UNIQUE,
     Staff_ID BIGINT,
@@ -46,10 +68,11 @@ CREATE TABLE IF NOT EXISTS Contract (
     PRIMARY KEY(Contract_ID)
 );
 
+--Contractors (eg: Cleaner, Maintenance)
 CREATE TABLE IF NOT EXISTS Contractor (
     Contractor_ID BIGINT AUTO_INCREMENT UNIQUE,
     Company CHAR,
-    Store_ID BIGINT UNIQUE,
+    Store_ID BIGINT,
     Job CHAR,
     Job_Start DATE,
     Job_End DATE,
