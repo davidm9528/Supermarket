@@ -1,4 +1,4 @@
---Details regarding each Product in a store
+/*Details regarding each Product in a store*/
 CREATE TABLE IF NOT EXISTS Product (
     Product_ID BIGINT AUTO_INCREMENT UNIQUE,
     Brand CHAR,
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS Product (
     PRIMARY KEY(Product_ID)
 );
 
---Store Addresses for x company
+/*Store Addresses for x company*/
 CREATE TABLE IF NOT EXISTS Addresses (
     AD1 CHAR,
     AD2 CHAR,
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Addresses (
     PRIMARY KEY(AD1)
 );
 
---Details about a store
+/*Details about a store*/
 CREATE TABLE IF NOT EXISTS Store (
     Store_ID BIGINT AUTO_INCREMENT UNIQUE,
     City CHAR, 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS Store (
     FOREIGN KEY (Address) REFERENCES Addresses(AD1)
 );
 
---Details holding all the details about items in a Store's Stock
+/*Details holding all the details about items in a Store's Stock*/
 CREATE TABLE IF NOT EXISTS Stock (
     Product_ID BIGINT,
     Store_ID BIGINT,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS Stock (
     FOREIGN KEY(Store_ID) REFERENCES Store(Store_ID)  
 );
 
---Details about the staff in different Stores
+/*Details about the staff in different Stores*/
 CREATE TABLE IF NOT EXISTS Staff (
     Staff_ID BIGINT AUTO_INCREMENT UNIQUE,
     Store_ID BIGINT UNIQUE,
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS Staff (
     FOREIGN KEY(Store_ID) REFERENCES Store(Store_ID)
 );
 
---The Contracts for each member of Staff
+/*The Contracts for each member of Staff*/
 CREATE TABLE IF NOT EXISTS Contract (
     Contract_ID BIGINT AUTO_INCREMENT UNIQUE,
     Staff_ID BIGINT,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS Contract (
     PRIMARY KEY(Contract_ID)
 );
 
---Contractors (eg: Cleaner, Maintenance)
+/*Contractors (eg: Cleaner, Maintenance)*/
 CREATE TABLE IF NOT EXISTS Contractor (
     Contractor_ID BIGINT AUTO_INCREMENT UNIQUE,
     Company CHAR,
