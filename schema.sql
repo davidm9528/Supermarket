@@ -1,10 +1,8 @@
 /*Details regarding each Product in a store*/
 CREATE TABLE IF NOT EXISTS Product (
     Product_ID BIGINT AUTO_INCREMENT UNIQUE,
-    Brand VARCHAR(64),
-    Product_Name VARCHAR(155),
-    Category VARCHAR(40),
-    Subcategory VARCHAR(40), 
+    Product_Name VARCHAR(82),
+    Aisle_ID BIGINT, 
     PRIMARY KEY(Product_ID)
 );
 
