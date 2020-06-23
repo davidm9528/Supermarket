@@ -499,6 +499,7 @@ INSERT INTO Product(Product_ID,Product_Name,Aisle_ID) VALUES (497,'Mascarpone Pi
 INSERT INTO Product(Product_ID,Product_Name,Aisle_ID) VALUES (498,'Daily Moisture Shampoo',22);
 INSERT INTO Product(Product_ID,Product_Name,Aisle_ID) VALUES (499,'Aspirin 325 Mg',133);
 INSERT INTO Product(Product_ID,Product_Name,Aisle_ID) VALUES (500,'Non-Scratch Scrub Sponges',114);
+
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*Inserts for Store*/
 
