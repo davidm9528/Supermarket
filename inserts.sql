@@ -501,6 +501,7 @@ INSERT INTO Product(Product_ID,Product_Name,Aisle_ID) VALUES (499,'Aspirin 325 M
 INSERT INTO Product(Product_ID,Product_Name,Aisle_ID) VALUES (500,'Non-Scratch Scrub Sponges',114);
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*Inserts for Store*/
+
 INSERT INTO Addresses(AD1,AD2,City_Town,District,Country,Telephone_No) VALUES ('1 Rodgers Quay','Carrickfergus','Belfast','Co. Antrim','UK',02892508282);
 INSERT INTO Addresses(AD1,AD2,City_Town,District,Country,Telephone_No) VALUES ('4 Braidwater Retail Park','Larne Road Link','Ballymena','Co. Antrim','UK',02892508283);
 INSERT INTO Addresses(AD1,AD2,City_Town,District,Country,Telephone_No) VALUES ('5 Sprucefield Park','Lisburn','Lisburn','Co. Down','UK',02892508284);
@@ -540,6 +541,7 @@ INSERT INTO Addresses(AD1,AD2,City_Town,District,Country,Telephone_No) VALUES ('
 INSERT INTO Addresses(AD1,AD2,City_Town,District,Country,Telephone_No) VALUES ('Hazel Grove','London Road','Stockport','Greater Manchester','UK',02892508318);
 /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 /*Inserts for Store*/
+
 INSERT INTO Store(Store_ID,Store_Name,Address) VALUES (1,'Carrickfergus Superstore','Carrickfergus');
 INSERT INTO Store(Store_ID,Store_Name,Address) VALUES (2,'Ballymena Superstore','Larne Road Link');
 INSERT INTO Store(Store_ID,Store_Name,Address) VALUES (3,'Sprucefield Superstore','Lisburn');
